@@ -1,0 +1,42 @@
+<!-- hello_world.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Post</h1>
+        <h3>{% for post in post_list %}
+            <div>
+            {{ post.title }}
+            {{ post.created_at }}
+            {{ post.photo }}
+            {{ post.content }}
+            </div>
+        {% endfor %}</h3>
+
+        <div class="thumbnail">
+            <img src="{{ post.photo }}" alt="">
+        </div>
+
+        {% if post.photo %}
+        <div class="thumbnail">
+            <img src="{{ post.photo }}" alt="">
+        </div>
+        {% else %}
+        <div class="thumbnail thumbnail-default"></div>
+        {% endif %}
+
+
+
+
+    </body>
